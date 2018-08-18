@@ -18,7 +18,7 @@ public class Test {
 		customers.add(new Customer(1,"1 - Catherine"));
 		customers.add(new Customer(2,"2 - Alan"));
 		customers.add(new Customer(3,"3 - John"));
-		customers.add(new Customer(4,"4-Fred"));
+		customers.add(new Customer(4,"4-Jim"));
 		
 		
 		
