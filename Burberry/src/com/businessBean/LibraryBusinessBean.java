@@ -26,9 +26,6 @@ public class LibraryBusinessBean {
 	@EJB 
 	SecondBeanLocal secondBean;
 	
-	@EJB
-	ThirdBeanLocal thirdBean;
-	
 
 	@EJB(name="PeopleService")
 	private PeopleLocal db;
@@ -59,10 +56,7 @@ public class LibraryBusinessBean {
 		
 		return secondBean.message();
 	}
-	
-	public String getThirdBean() {
-		return thirdBean.message();
-	}
+
 
 
 
