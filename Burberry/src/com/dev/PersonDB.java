@@ -15,46 +15,41 @@ import org.hibernate.cfg.Configuration;
 
 import com.database.Person;
 
-
-
 @Stateless
 @LocalBean
 public class PersonDB implements PersonDBLocal {
-	
-  	
+
 	public List<Person> person;
-	
-	@EJB 
+
+	@EJB
 	HibernateSessionLocal hibernateSession;
-	
-	
-	
-	
+
 	public void setHibernateSession(HibernateSessionLocal hibernateSession) {
 		this.hibernateSession = hibernateSession;
 	}
 
 	public PersonDB() {
 		System.out.println("injected PersonDB constructor");
-		
+
 	}
-	
+
 	public List<Person> getPerson() {
-		    System.out.println("getPerson()");
-		    
-		    //SessionFactory factory = new Configuration().configure().buildSessionFactory();
-		    
-		    Session session = hibernateSession.getSession(); //factory.openSession();
-		    
-		    CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
-		    
-		    CriteriaQuery<Person> query = criteriaBuilder.createQuery(Person.class);
-			   Root<Person> root = query.from(Person.class);
-			   
-			   query.select(root);
-				
-				return session.createQuery(query).getResultList();
-			  
-	    	    }
+		System.out.println("getPerson()");
+
+		// SessionFactory factory = new
+		// Configuration().configure().buildSessionFactory();
+
+		Session session = hibernateSession.getSession(); // factory.openSession();
+
+		CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+
+		CriteriaQuery<Person> query = criteriaBuilder.createQuery(Person.class);
+		Root<Person> root = query.from(Person.class);
+
+		query.select(root);
+
+		return session.createQuery(query).getResultList();
+
+	}
 
 }
