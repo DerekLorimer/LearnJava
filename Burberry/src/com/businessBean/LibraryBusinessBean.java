@@ -7,11 +7,9 @@ import javax.faces.bean.ManagedBean;
 
 import com.database.Person;
 import com.derek.MyBeanLocal;
-import com.dev.People;
 import com.dev.PeopleLocal;
 import com.ejb.LibrarySessionBeanLocal;
 import com.second.SecondBeanLocal;
-import com.third.ThirdBeanLocal;
 
 @ManagedBean(name="LibraryBusiness")
 public class LibraryBusinessBean {

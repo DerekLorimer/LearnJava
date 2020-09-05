@@ -30,6 +30,10 @@ public class PersonDB implements PersonDBLocal {
 	
 	
 	
+	public void setHibernateSession(HibernateSessionLocal hibernateSession) {
+		this.hibernateSession = hibernateSession;
+	}
+
 	public PersonDB() {
 		System.out.println("injected PersonDB constructor");
 		
