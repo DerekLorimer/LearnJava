@@ -50,6 +50,13 @@ public class MockResultSet {
       Integer columnIndex = columnIndices.get(columnName);
       return (String) data[rowIndex][columnIndex];
     }).when(rs).getString(Matchers.anyString());
+    
+    doAnswer(invocation -> {
+        String columnName = invocation.getArgument(0, String.class);
+        Integer columnIndex = columnIndices.get(columnName);
+        return (Integer) data[rowIndex][columnIndex];
+      }).when(rs).getInt(Matchers.anyString());
+   
  
     // mock rs.getObject(columnIndex)
     doAnswer(invocation -> {

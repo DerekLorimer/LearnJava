@@ -54,14 +54,14 @@ public class ReadPersonTest {
 		EntityManager em = Mockito.mock(EntityManager.class);
 		Session session = Mockito.mock(Session.class);
 		
-	//	ResultSet rs = Mockito.mock(ResultSet.class);
 		
 		ResultSet rs = MockResultSet.create(
-		           new String[] { "name" }, //columns
+		           new String[] { "name", "age" }, //columns
 		           new Object[][] { // data
-		             { "Alice" },
-		             { "Bob"},
-		             { "Charles" }
+		             { "Alice" , 8},
+		             { "Bob", 9},
+		             { "Charles",10 },
+		             { "Derek",58 }
 		           });
 
 		

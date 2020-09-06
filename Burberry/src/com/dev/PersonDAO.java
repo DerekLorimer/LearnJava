@@ -82,11 +82,13 @@ public class PersonDAO implements PersonDBLocal {
 		System.out.println("Execute - do whatever you need to do with the connection");
 		Statement stmt = connection.createStatement();
 		String sql;
-		sql = "SELECT name From Person";
+		sql = "SELECT name, age From Person";
 		ResultSet rs = stmt.executeQuery(sql);
 
 		while (rs.next()) {
-			System.out.println(rs.getString("name"));
+			System.out.print(rs.getString("name"));
+			System.out.print(" age ");
+			System.out.println(rs.getInt("age")); 
 		}
 	}
 
